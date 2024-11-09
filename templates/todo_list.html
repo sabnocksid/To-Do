@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+</head>
+<body>
+     
+    <h1>My Todo</h1>
+    <a href="{% url 'create' %}"><Button>Add</Button></a>
+     {% for todo in todos %}
+     <p>{{ todo.title }}
+        <a href="{% url 'update' todo.pk %}">
+            <button>Update</button>
+        </a>
+    <a href="{% url 'delete' todo.pk %}">
+            <button>Delete</button>
+        </a>
+     </p>
+     {% endfor %}
+     
+</body>
+</html>
